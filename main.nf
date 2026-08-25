@@ -15,7 +15,7 @@ process FASTQC {
 workflow {
 
     reads = channel.frompath("test_data/
-*.fastq.gz")
+*.fastq")
 
    FASTQC(reads)
 }
