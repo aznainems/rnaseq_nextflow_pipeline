@@ -1,4 +1,5 @@
 nextflow.enable.dsl=2
+
 process FASTQC {
 
     input:
@@ -12,10 +13,10 @@ process FASTQC {
     fastqc ${reads}
     """
 }
+
 workflow {
 
-    reads = channel.frompath("test_data/
-*.fastq")
+    reads = channel.fromPath("test_data/*.fastq")
 
-   FASTQC(reads)
+    FASTQC(reads)
 }
